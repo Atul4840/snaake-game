@@ -1,8 +1,6 @@
 // canvas select
 let canvas = document.querySelector("canvas");
-// console.log('object');
 // brush lo
-
 let ctx = canvas.getContext("2d");
 
 let cellSize = 50;
@@ -20,12 +18,12 @@ let snakeCells = [
 
 function foodGenerate() {
     return [
-        Math.floor((Math.random() * boardWidth - cellSize) / cellSize) * cellSize,
-        Math.floor((Math.random() * boardHeight - cellSize) / cellSize) * cellSize,
+        Math.round((Math.random() * (boardWidth - cellSize)) / cellSize) * cellSize,
+        Math.round((Math.random() * (boardHeight - cellSize)) / cellSize) * cellSize
     ];
 }
-
 let food = foodGenerate();
+// console.log(food[0],food[1]);
 
 // snake ko draw kro
 
@@ -82,16 +80,15 @@ function update() {
 
     if ( newHeadX < 0 || newHeadX >= boardWidth || newHeadY < 0 || newHeadY >= boardHeight) {
         gameOver();
-        
     }
 }
 
 function resetGame(){
    
         snakeCells = [[0, 0], [50, 0], [100, 0]];
-        food = generateFood();
+        food = foodGenerate();
         direction = 'right';
-        return;
+       
      
 }
 
