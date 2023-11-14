@@ -91,7 +91,6 @@ function resetGame(){
         snakeCells = [[0, 0], [50, 0], [100, 0]];
         food = generateFood();
         direction = 'right';
-
         return;
      
 }
