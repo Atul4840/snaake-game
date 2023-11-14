@@ -20,8 +20,8 @@ let snakeCells = [
 
 function foodGenerate() {
     return [
-        Math.round((Math.random() * boardWidth - cellSize) / cellSize) * cellSize,
-        Math.round((Math.random() * boardHeight - cellSize) / cellSize) * cellSize,
+        Math.floor((Math.random() * boardWidth - cellSize) / cellSize) * cellSize,
+        Math.floor((Math.random() * boardHeight - cellSize) / cellSize) * cellSize,
     ];
 }
 
@@ -68,7 +68,7 @@ function update() {
     for (let i = 0; i < snakeCells.length - 1; i++) {
         if (snakeCells[i][0] === newHeadX && snakeCells[i][1] === newHeadY) {
           gameOver();
-          return
+          
         }
       }
 
@@ -82,7 +82,7 @@ function update() {
 
     if ( newHeadX < 0 || newHeadX >= boardWidth || newHeadY < 0 || newHeadY >= boardHeight) {
         gameOver();
-        return;
+        
     }
 }
 
@@ -91,6 +91,8 @@ function resetGame(){
         snakeCells = [[0, 0], [50, 0], [100, 0]];
         food = generateFood();
         direction = 'right';
+
+        return;
      
 }
 
