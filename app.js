@@ -78,7 +78,7 @@ function update() {
         snakeCells.shift();
     }
 
-    if ( newHeadX < 0 || newHeadX >= boardWidth || newHeadY < 0 || newHeadY >= boardHeight) {
+    if (newHeadX < 0 || newHeadX >= boardWidth || newHeadY < 0 || newHeadY >= boardHeight) {
         gameOver();
     }
 }
@@ -94,7 +94,7 @@ function resetGame(){
 
 
 function gameOver() {
-    alert('Game Over!');
+    alert('Game Over Japan 🤭!');
     resetGame();
   }
 
